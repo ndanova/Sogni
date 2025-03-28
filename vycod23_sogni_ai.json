@@ -1,0 +1,133 @@
+{
+  "ops": [
+    {
+      "id": "sogniworker",
+      "args": {
+        "cmd": [
+          "--allow-code --xformers --enable-insecure-extension-access --api --no-download-sd-model"
+        ],
+        "env": {
+          "API_KEY": "1d60894a-fb57-4284-8e93-fecff2d830ea",
+          "NFT_TOKEN_ID": "356"
+        },
+        "gpu": true,
+        "image": "registry.hub.docker.com/sogni/sogni-stable-diffusion-worker-no-models:7",
+        "expose": 8000,
+        "resources": [
+          {
+            "url": "https://pub-5bc58981af9f42659ff8ada57bfea92c.r2.dev/controlnets",
+            "type": "S3",
+            "files": [
+              "control_v11e_sd15_ip2p_fp16.safetensors",
+              "control_v11e_sd15_shuffle_fp16.safetensors",
+              "control_v11f1e_sd15_tile_fp16.safetensors",
+              "control_v11f1p_sd15_depth_fp16.safetensors",
+              "control_v11p_sd15_canny_fp16.safetensors",
+              "control_v11p_sd15_inpaint_fp16.safetensors",
+              "control_v11p_sd15_lineart_fp16.safetensors",
+              "control_v11p_sd15_mlsd_fp16.safetensors",
+              "control_v11p_sd15_normalbae_fp16.safetensors",
+              "control_v11p_sd15_openpose_fp16.safetensors",
+              "control_v11p_sd15_scribble_fp16.safetensors",
+              "control_v11p_sd15_seg_fp16.safetensors",
+              "control_v11p_sd15_softedge_fp16.safetensors",
+              "control_v11p_sd15s2_lineart_anime_fp16.safetensors"
+            ],
+            "target": "/data-models/ControlNet/",
+            "allowWrite": true
+          },
+          {
+            "type": "S3",
+            "target": "/data-models/Stable-diffusion",
+            "buckets": [
+              {
+                "url": "https://pub-5bc58981af9f42659ff8ada57bfea92c.r2.dev/Sogni%20Supported%20SD1.5",
+                "files": [
+                  "Sogni-real-v1-AD.safetensors",
+                  "Sogni_lcm_v1_AD.safetensors",
+                  "aZovyaRPGArtistTools_v4Pruned.safetensors",
+                  "architecturerealmix_v11.safetensors",
+                  "cyberrealisticLCM42_v10.safetensors",
+                  "cyberrealistic_classic311.safetensors",
+                  "cyberrealistic_v50.safetensors",
+                  "dreamshaper_8.safetensors",
+                  "dreamshaper_8LCM.safetensors",
+                  "edgeOfRealism_eorV20Fp16BakedVAE.safetensors",
+                  "epicrealism_naturalSinRC1VAE.safetensors",
+                  "epicrealism_pureEvolutionV5.safetensors",
+                  "ghostmix_v20Bakedvae.safetensors",
+                  "juggernaut_reborn.safetensors",
+                  "leosamsFilmgirlUltra_ultraBaseModel.safetensors",
+                  "picxReal_10.safetensors",
+                  "raRenderArchitectureRender_v33.safetensors",
+                  "realDream_14SD15.safetensors",
+                  "realDream_turboLCM7SD15.safetensors",
+                  "realcartoonRealistic_v16.safetensors",
+                  "realisticVisionV60B1_v51VAE.safetensors",
+                  "revAnimated_v2Pruned.safetensors"
+                ]
+              },
+              {
+                "url": "https://pub-5bc58981af9f42659ff8ada57bfea92c.r2.dev/Sogni%20Supported%20SDXL",
+                "files": [
+                  "AnythingXL_xl.safetensors",
+                  "Juggernaut_X_RunDiffusion.safetensors",
+                  "SDXLFaetastic_v24.safetensors",
+                  "STOIQONewrealityxl_XL40.safetensors",
+                  "Sogni-XLturbo-alpha1-AD.safetensors",
+                  "bluePencilXL_v700.safetensors",
+                  "dreamshaperXL_alpha2Xl10.safetensors",
+                  "dreamshaperXL_v21TurboDPMSDE.safetensors",
+                  "epicrealismXL_v7FinalDestination.safetensors",
+                  "juggernautXL_v9Rdphoto2Lightning.safetensors",
+                  "leosamsHelloworldXL_helloworldXL70.safetensors",
+                  "nightvisionxl_V900.safetensors",
+                  "omnium_v11.safetensors",
+                  "pixelAlchemy_hV22.safetensors",
+                  "ponyDiffusionV6XL_v6StartWithThisOne.safetensors",
+                  "ponyFaetality_v11.safetensors",
+                  "sdXL_v10VAEFix.safetensors",
+                  "sdxlUnstableDiffusers_nihilmania.safetensors",
+                  "sdxlUnstableDiffusers_v10TURBOEDITION.safetensors",
+                  "sdxlYamersRealistic5_v5Rundiffusion.safetensors",
+                  "thinkdiffusionxl_v10.safetensors",
+                  "albedobaseXL_v31Large.safetensors",
+                  "animaPencilXL_v500.safetensors",
+                  "artUniverse_sdxlV60.safetensors",
+                  "cyberrealisticXL_v4.safetensors",
+                  "cyberrealisticPony_v7.safetensors",
+                  "epicrealismXL_vxiiAbea2t.safetensors"
+                ]
+              },
+              {
+                "url": "https://safetensor.sogni.ai/Sogni+Supported+SD1.5",
+                "files": [
+                  "Sogni-artist-v1-AD.safetensors",
+                  "analogMadness_v70.safetensors"
+                ]
+              },
+              {
+                "url": "https://safetensor.sogni.ai/Sogni+Supported+SDXL",
+                "files": [
+                  "SogniXL-alpha2-WS.safetensors",
+                  "analogMadnessSDXL_sdxlV11.safetensors",
+                  "animagineXLV31_v31.safetensors",
+                  "crystalClearXL_ccxl.safetensors",
+                  "dynavisionXLAllInOneStylized_releaseV0610Bakedvae.safetensors",
+                  "zavychromaxl_v80.safetensors"
+                ]
+              }
+            ],
+            "allowWrite": true
+          }
+        ]
+      },
+      "type": "container/run"
+    }
+  ],
+  "meta": {
+    "trigger": "cli"
+  },
+  "type": "container",
+  "version": "0.1"
+}
