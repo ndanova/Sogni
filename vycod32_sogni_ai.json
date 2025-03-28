@@ -7,8 +7,8 @@
           "--allow-code --xformers --enable-insecure-extension-access --api --no-download-sd-model"
         ],
         "env": {
-          "API_KEY": "1d60894a-fb57-4284-8e93-fecff2d830ea",
-          "NFT_TOKEN_ID": "356"
+          "API_KEY": "1c07045a-8193-44df-9769-7cbac7bab705",
+          "NFT_TOKEN_ID": "558"
         },
         "gpu": true,
         "image": "registry.hub.docker.com/sogni/sogni-stable-diffusion-worker-no-models:7",
